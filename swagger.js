@@ -3,9 +3,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'My API',
-    description: '',
+    description: 'My Car Dealership',
   },
-  host: ''
+  host: 'web-services-t7a9.onrender.com'
 };
  
 const outputFile = './swagger-output.json';
