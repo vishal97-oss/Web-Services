@@ -1,0 +1,19 @@
+###
+
+
+POST http://localhost:8080/cars
+content-type: application/json
+
+{
+    "Make":  "Audi",
+    "Model": "A-4",
+    "Year": "2017",
+    "Miles": "10600",
+    "Drive": "AWD",
+    "Engine": "2.0",
+    "0to60":  "5.2",
+    "horsePower": "261"
+}
+
+###
+GET http://localhost:8080/cars/65cd433f12ea2b200395422b
