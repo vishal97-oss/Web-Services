@@ -1,95 +1,89 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "title": "My API",
-      "description": "Temple API",
-      "version": "1.0.0"
-    },
-    "host": "https://web-services-t7a9.onrender.com",
-    "basePath": "/",
-    "schemes": [
-      "https"
-    ],
-    "paths": {
-      "/": {
-        "get": {
-          "description": "",
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Temple API",
+    "version": "1.0.0"
+  },
+  "host": "web-services-t7a9.onrender.com",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/Cars": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
-    },
-
-        "post": {
-            "description": "",
-            "parameters": [
-            {
-                "name": "body",
-                "in": "body",
-                "schema": {
-                "type": "object",
-                "properties": {
-                    "Make": {
-                    "example": "any"
-                    },
-                    "Model": {
-                    "example": "any"
-                    },
-                    "Year": {
-                    "example": "any"
-                    },
-                    "Miles": {
-                    "example": "any"
-                    },
-                    "Drive": {
-                    "example": "any"
-                    },
-                    "Engine": {
-                    "example": "any"
-                    },
-                    "0to60": {
-                    "example": "any"
-                    },
-                    "horsePower": {
-                    "example": "any"
-                    }
-                }
-                }
-            }
-            ],
-            "responses": {
-                "201": {
-                  "description": "Created"
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Make": {
+                  "example": "any"
                 },
-                "500": {
-                  "description": "Internal Server Error"
+                "Model": {
+                  "example": "any"
+                },
+                "Year": {
+                  "example": "any"
+                },
+                "Miles": {
+                  "example": "any"
+                },
+                "Drive": {
+                  "example": "any"
+                },
+                "Engine": {
+                  "example": "any"
+                },
+                "0to60": {
+                  "example": "any"
+                },
+                "horsePower": {
+                  "example": "any"
                 }
               }
-            },
-            "/Cars/{id}": {
-                "get": {
-                  "description": "",
-                  "produces": [
-                    "application/json"
-                  ],
-                  "parameters": [
-                    {
-                      "name": "id",
-                      "in": "path",
-                      "required": true,
-                      "type": "string"
-                    }
-                  ],
-                  "responses": {
-                    "200": {
-                      "description": "OK"
-                    }
-                  }
-                }
             }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
 
-}
-
+    "/Cars/{id}": {
+      "get": {
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
 }

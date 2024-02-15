@@ -9,6 +9,8 @@ routes.put('/Cars/:id', contactController.updatecarinfo)
 
 routes.get('/Cars/:id', contactController.getSingle )
 
+routes.get('/Cars', contactController.getAll)
+
 routes.use('/', require('./swagger'))
 
 
