@@ -13,6 +13,9 @@ routes.get('/Cars', contactController.getAll)
 
 routes.use('/', require('./swagger'))
 
+routes.delete('/Cars/:id', contactController.deleteContact)
+
+
 
 
 module.exports = routes;

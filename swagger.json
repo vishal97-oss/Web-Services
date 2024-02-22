@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Temple API",
+    "description": "My Car Dealership",
     "version": "1.0.0"
   },
   "host": "web-services-t7a9.onrender.com",
@@ -45,9 +45,6 @@
                 "Engine": {
                   "example": "any"
                 },
-                "0to60": {
-                  "example": "any"
-                },
                 "horsePower": {
                   "example": "any"
                 }
@@ -83,7 +80,76 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Make": {
+                  "example": "any"
+                },
+                "Model": {
+                  "example": "any"
+                },
+                "Year": {
+                  "example": "any"
+                },
+                "Miles": {
+                  "example": "any"
+                },
+                "Drive": {
+                  "example": "any"
+                },
+                "Engine": {
+                  "example": "any"
+                },
+                "horsePower": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
+
   }
 }
