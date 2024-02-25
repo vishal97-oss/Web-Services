@@ -7,15 +7,15 @@ content-type: application/json
 {
     "Make":  "Audi",
     "Model": "A-4",
-    "Year": "2017",
-    "Miles": "90,000",
+    "Year": 2017,
+    "Miles": 90000,
     "Drive": "AWD",
     "Engine": "2.0 V6",
-    "horsePower": "261"
+    "horsePower": "101"
 }
 
 ###
-GET http://localhost:8080/cars/65ced907ba2b6cbde9e66452
+GET http://localhost:8080/cars/65d8de9400ee6048a5290533
 ###
 PUT http://localhost:8080/cars/65ced97c1b43d6fc1d921791
 content-type: application/json

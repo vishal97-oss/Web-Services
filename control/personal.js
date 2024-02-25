@@ -1,5 +1,6 @@
 const mongodb = require('../DB/connect');
 const ObjectId = require('mongodb').ObjectId;
+const { validationResult } = require('express-validator');
 
 const getSingle = async (req, res, next) => {
     const userId = new ObjectId(req.params.id);
@@ -8,13 +9,28 @@ const getSingle = async (req, res, next) => {
       .db("CarDealership")
       .collection('Cars')
       .find({ _id: userId });
-    result.toArray().then((lists) => {
+    result.toArray()
+    .then((lists) => {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
+      if(lists.length > 0){
+        res.status(200).json(lists[0]);
+      } else {
+        res.status(404).send();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json(err || 'Some error occurred while getting the contact.');
     });
   };
 
 const createcarInfo = async(req,res) =>{ 
+  const result = validationResult(req);
+  if (!result.isEmpty()) {
+    res.status(400).send({ errors: result.array() });
+    return;
+  }
+
+
     const contact = {
         Make: req.body.Make,
         Model: req.body.Model,
@@ -65,6 +81,9 @@ const getAll = async (req, res, next) => {
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
+  })
+  .catch((err) => {
+    res.status(500).json(err || 'Some error occurred while getting the contact.');
   });
 };
 
