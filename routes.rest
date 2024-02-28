@@ -5,13 +5,13 @@ POST http://localhost:8080/cars
 content-type: application/json
 
 {
-    "Make":  "Audi",
-    "Model": "A-4",
-    "Year": 2017,
-    "Miles": 90000,
-    "Drive": "AWD",
-    "Engine": "2.0 V6",
-    "horsePower": "101"
+    "Make":  "Scion",
+    "Model": "TC",
+    "Year": 2009,
+    "Miles": 150000,
+    "Drive": "FWD",
+    "Engine": "1.5",
+    "horsePower": "150"
 }
 
 ###
