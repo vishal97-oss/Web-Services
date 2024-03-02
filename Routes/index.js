@@ -19,7 +19,7 @@ routes.delete('/Cars/:id', requiresAuth(), contactController.deleteContact)
 
 routes.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
-        return res.status(401).send({msg: 'Invalid token'});
+        return res.status(401).send({msg: 'Login Require'});
     }
     next(err, req, res);
 });
